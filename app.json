@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e29a58bc-d39b-45f1-8bb4-a77d28084acc"
+      }
+    },
+    "owner": "sholtzman"
   }
 }
