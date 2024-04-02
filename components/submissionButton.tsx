@@ -5,15 +5,15 @@ export default function GreenButton({ title, functionHandler }) {
   return (
     <View>
       <Pressable
-        onPress={functionHandler}
+        onPress={ functionHandler }
         style={({ pressed }) => [
           styles.stickyButton,
           pressed && styles.pressedButton,
         ]}>
         {({ pressed }) => (
-          <Text style={styles.boldWhiteText}>
-            {pressed ? 
-              <Text style={styles.boldGreenText}>{title}</Text> : title}
+          <Text style={ styles.boldWhiteText }>
+            { pressed ? 
+              <Text style={ styles.boldGreenText }>{ title }</Text> : title}
           </Text>
         )}
       </Pressable>
