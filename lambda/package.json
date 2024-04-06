@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/swholtzman/ReactNative-AWS-Tutorial/issues"
   },
-  "homepage": "https://github.com/swholtzman/ReactNative-AWS-Tutorial#readme"
+  "homepage": "https://github.com/swholtzman/ReactNative-AWS-Tutorial#readme",
+  "dependencies": {
+    "uuid": "^9.0.1"
+  }
 }
