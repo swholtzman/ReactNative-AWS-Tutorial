@@ -31,7 +31,7 @@ package:
 
 resources:
  Resources:
-   StarbucksUserTable:
+   newProjectTable:
      Type: AWS::DynamoDB::Table
      Properties:
        TableName: newProjectTable # The name of your DynamoDB table
