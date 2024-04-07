@@ -1,0 +1,44 @@
+service: newProject
+
+provider:
+ name: aws
+ runtime: nodejs20.x  # Ensure this matches a version supported by AWS Lambda
+ region: ca-central-1
+ environment:
+   USER_TABLE: newProjectTable # The name of your DynamoDB table
+
+functions:
+ createUser:
+   handler: lambda/functions/createUser.handler # The path to your createUser function
+   events:
+     - http:
+         path: users/create
+         method: post
+         cors: true
+ authenticateUser:
+   handler: lambda/functions/authenticateUser.handler # The path to your authenticateUser function
+   events:
+     - http:
+         path: users/authenticate # The lambda path to your createUser function
+         method: post
+         cors: true
+
+package:
+ individually: true
+ patterns: # Important to ensure package size is not too big for deployment
+   - '!**' # Exclude everything by default
+   - 'lambda/**' # Include all files in the lambda directory
+
+resources:
+ Resources:
+   newProjectTable:
+     Type: AWS::DynamoDB::Table
+     Properties:
+       TableName: newProjectTable # The name of your DynamoDB table
+       AttributeDefinitions:
+         - AttributeName: email
+           AttributeType: S
+       KeySchema:
+         - AttributeName: email
+           KeyType: HASH
+       BillingMode: PAY_PER_REQUEST

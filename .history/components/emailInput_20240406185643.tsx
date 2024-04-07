@@ -1,4 +1,4 @@
-// emailInput.tsx
+// EmailInput.tsx
 import React from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import { Controller } from "react-hook-form"; // Import Controller from 'react-hook-form'
